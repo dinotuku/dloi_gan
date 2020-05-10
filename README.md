@@ -1,10 +1,6 @@
-Interspeech 2018
+DLOI GAN Project Presentation
 ===
 
 ## Reference
 
-1. Kannan, A., Chen, K., Jaunzeikare, D., Rajkomar, A. (2018) Semi-supervised Learning for Information Extraction from Dialogue. Proc. Interspeech 2018, 2077-2081, DOI: 10.21437/Interspeech.2018-1318.
-
-2. Renduchintala, A., Ding, S., Wiesner, M., Watanabe, S. (2018) Multi-Modal Data Augmentation for End-to-end ASR. Proc. Interspeech 2018, 2394-2398, DOI: 10.21437/Interspeech.2018-2456.
-
-3. Al Hanai, T., Ghassemi, M., Glass, J. (2018) Detecting Depression with Audio/Text Sequence Modeling of Interviews. Proc. Interspeech 2018, 1716-1720, DOI: 10.21437/Interspeech.2018-2522.
+1. Isola, Phillip, Jun-Yan Zhu, Tinghui Zhou, and Alexei A. Efros. "Image-to-image translation with conditional adversarial networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1125-1134. 2017.
