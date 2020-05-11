@@ -102,7 +102,8 @@
           <ul class="small">
             <li>Discriminator: Cross entropy</li>
             <p class="fragment" data-fragment-index="1">Real loss + generated loss</p>
-            <li>Generator: L1 × <span class="fragment highlight-red" data-fragment-index="3">Lambda</span> + Cross entropy<sup>*</sup></li>
+            <li>Generator: L1 × <span class="fragment highlight-red" data-fragment-index="3">Lambda</span> + Cross
+              entropy<sup>*</sup></li>
             <p class="fragment" data-fragment-index="2">Structurally similar to the target image</p>
             <p class="fragment">Generated loss<sup>*</sup></p>
           </ul>
@@ -230,7 +231,7 @@
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
       chalkboard: {
-        background: [ 'rgba(127, 127, 127, 0)' , 'plugin/chalkboard/img/blackboard.png' ],
+        background: ['rgba(127, 127, 127, 0)', 'plugin/chalkboard/img/blackboard.png'],
         toggleChalkboardButton: { left: "80px", bottom: "30px", top: "auto", right: "auto" },
         toggleNotesButton: { left: "130px", bottom: "30px", top: "auto", right: "auto" },
       },
@@ -252,6 +253,11 @@
         68: function () { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
         88: function () { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
         89: function () { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+      },
+      menu: {
+        custom: [
+          { title: 'Links', icon: '<i class="fa fa-external-link-alt"></i>', content: '<ul class="slide-menu-items"><li class="slide-menu-item"><a href="https://arxiv.org/abs/1611.07004" target="_blank">Paper</a></li><li class="slide-menu-item"><a href="https://github.com/phillipi/pix2pix" target="_blank">pix2pix</a></li><li class="slide-menu-item"><a href="https://github.com/eriklindernoren/Keras-GAN/" target="_blank">Keras-GAN</a></li><li class="slide-menu-item"><a href="https://www.tensorflow.org/tutorials/generative/pix2pix" target="_blank">Tensorflow Pix2Pix</a></li><li class="slide-menu-item"><a href="https://gist.github.com/dinotuku/cabf37e5ba7a6b64657d521294bf50d5" target="_blank">Our notebook</a></li></ul>' },
+        ]
       },
     });
 
