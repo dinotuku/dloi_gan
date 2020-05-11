@@ -63,3 +63,7 @@
   border: none !important;
   box-shadow: none !important;
 }
+
+.reveal.has-dark-background .progress, .reveal.has-dark-background i {
+  color: #636363;
+}

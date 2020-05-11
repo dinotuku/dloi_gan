@@ -58,7 +58,7 @@
       <section>
         <section>
           <h3 class="thick">Paper</h3>
-          <a href="https://arxiv.org/abs/1611.07004" target="_blank"><img src="https://i.imgur.com/lbSdgbJ.png"
+          <a href="https://arxiv.org/abs/1611.07004" target="_blank"><img data-src="https://i.imgur.com/lbSdgbJ.png"
               width=640></a>
         </section>
         <section>
@@ -74,11 +74,11 @@
       <section>
         <section>
           <h3 class="thick">GAN model</h3>
-          <img src="https://i.imgur.com/Go9lRi5.png" width=720>
+          <img data-src="https://i.imgur.com/Go9lRi5.png" width=720>
         </section>
         <section>
           <h3 class="thick">Generator</h3>
-          <img src="https://i.imgur.com/Kod7uAX.png" width=540>
+          <img data-src="https://i.imgur.com/Kod7uAX.png" width=540>
           <div class="small">
             <p class="fragment" style="color: #da3831;">BatchNorm (except the 1st one) --> LeakyReLU</p>
             <p class="fragment" style="color: #49ace8;">BatchNorm --> Dropout (only the first 3, rate=0.5) --> ReLU</p>
@@ -89,7 +89,7 @@
           <h3 class="thick">Discriminator</h3>
           <div class="container">
             <div class="col">
-              <img src="https://i.imgur.com/R6Byzlf.png">
+              <img data-src="https://i.imgur.com/R6Byzlf.png">
             </div>
             <div class="col small">
               <p class="fragment" style="color: #da3831;">BatchNorm (except the 1st one) --> LeakyReLU</p>
@@ -101,9 +101,9 @@
           <h3 class="thick">Losses</h3>
           <ul class="small">
             <li>Discriminator: Cross entropy</li>
-            <p class="fragment">Real loss + generated loss</p>
-            <li>Generator: L1 * <span class="fragment highlight-red">Lambda</span> + Cross entropy<sup>*</sup></li>
-            <p class="fragment">Structurally similar to the target image</p>
+            <p class="fragment" data-fragment-index="1">Real loss + generated loss</p>
+            <li>Generator: L1 × <span class="fragment highlight-red" data-fragment-index="3">Lambda</span> + Cross entropy<sup>*</sup></li>
+            <p class="fragment" data-fragment-index="2">Structurally similar to the target image</p>
             <p class="fragment">Generated loss<sup>*</sup></p>
           </ul>
         </section>
@@ -124,7 +124,9 @@
         <section>
           <h3 class="thick">Dataset</h3>
           <p>Facade</p>
-          <p>Download from the <a href="https://people.eecs.berkeley.edu/~tinghuiz/projects/pix2pix/datasets/facades.tar.gz" target="_blank">link</a> we used in CW7</p>
+          <p>Download from the <a
+              href="https://people.eecs.berkeley.edu/~tinghuiz/projects/pix2pix/datasets/facades.tar.gz"
+              target="_blank">link</a> we used in CW7</p>
           <p>500 training data (train + val)</p>
           <p>106 testing data</p>
         </section>
@@ -142,7 +144,7 @@
         </section>
         <section>
           <h3 class="thick">Random jitter + Mirroring</h3>
-          <img src="https://i.imgur.com/uhft2er.png" width=720>
+          <img data-src="https://i.imgur.com/uhft2er.png" width=720>
         </section>
       </section>
 
@@ -155,18 +157,28 @@
           <p><span class="fragment highlight-blue">Without</span> random jitter and mirroring</p>
         </section>
         <section>
-          <img src="https://i.imgur.com/pcszqFg.png" width=720>
-          <p class="thin smaller" style="margin: 0;">Training history <span style="color: #ff2c2d;">with</span> RJM</p>
-          <img src="https://i.imgur.com/V9jPbZI.png" width=720>
-          <p class="thin smaller" style="margin: 0;">Training history <span style="color: #1b91ff;">without</span> RJM</p>
+          <div class="container">
+            <div class="col-4" style="display: flex; justify-content: center; flex-direction: column;">
+              <h3 class="thick">Loss history</h3>
+            </div>
+            <div class="col-8">
+              <img data-src="https://i.imgur.com/pcszqFg.png" width=720>
+              <p class="thin smaller" style="margin: 0;">Training history <span style="color: #ff2c2d;">with</span> RJM
+              </p>
+              <img data-src="https://i.imgur.com/V9jPbZI.png" width=720>
+              <p class="thin smaller" style="margin: 0;">Training history <span style="color: #1b91ff;">without</span>
+                RJM
+              </p>
+            </div>
+          </div>
         </section>
         <section>
           <h5 class="thick">Testing data comparison</h5>
-          <img src="https://i.imgur.com/oXYxsxL.png" width=720>
+          <img data-src="https://i.imgur.com/oXYxsxL.png" width=720>
         </section>
         <section>
           <h5 class="thick">Training data comparison</h5>
-          <img src="https://i.imgur.com/jG7bESM.png" width=720>
+          <img data-src="https://i.imgur.com/jG7bESM.png" width=720>
         </section>
         <section>
           <h5 class="thick">Testing Evolution</h5>
@@ -196,8 +208,9 @@
         </section>
         <section>
           <h3 class="thick">Conclusion</h3>
-          <p>Manage to get better result than CW7 (U-net)</p>
+          <p>The result is <span class="fragment highlight-red">better</span> than CW7 (U-net)</p>
           <p>Random jitter and mirroring do help</p>
+          <p class="fragment">--> Avoid overfitting</p>
         </section>
       </section>
 
@@ -216,14 +229,30 @@
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
+      chalkboard: {
+        background: [ 'rgba(127, 127, 127, 0)' , 'plugin/chalkboard/img/blackboard.png' ],
+        toggleChalkboardButton: { left: "80px", bottom: "30px", top: "auto", right: "auto" },
+        toggleNotesButton: { left: "130px", bottom: "30px", top: "auto", right: "auto" },
+      },
       controlsTutorial: false,
       dependencies: [
+        { src: 'plugin/chalkboard/chalkboard.js' },
         { src: 'plugin/markdown/marked.js' },
         { src: 'plugin/markdown/markdown.js' },
         { src: 'plugin/math/math.js' },
+        { src: 'plugin/menu/menu.js' },
         { src: 'plugin/notes/notes.js', async: true },
         { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-      ]
+      ],
+      keyboard: {
+        67: function () { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+        66: function () { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+        46: function () { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+        8: function () { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+        68: function () { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+        88: function () { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+        89: function () { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+      },
     });
 
     document.onkeypress = function (e) {
